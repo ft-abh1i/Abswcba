@@ -1,80 +1,558 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f8e9e8">
-<title>For Abhishek ♡</title>
+<title>For Abhii ♡</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--pink:#f4dedd;--blush:#f9eeee;--cream:#fffaf4;--rose:#b8757d;--ink:#59464a;--muted:#927b7e;--line:#e8c9c8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--blush);color:var(--ink);font-family:'DM Sans',sans-serif}
-button{font:inherit}.serif{font-family:'Playfair Display',serif}.script{font-family:'Caveat',cursive}
 
-@keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
-.topbar{text-align:center;padding:17px 12px;font: .7rem 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a37b7f;background:#fff8f3}
-.hero{min-height:82svh;display:grid;place-items:center;text-align:center;padding:50px 20px;position:relative;overflow:hidden;background:linear-gradient(#f8e9e6d9,#f8e9e6d9),url('images/photo-03.jpg') center 35%/cover}
-.hero-box{max-width:720px;background:#fffaf0e8;padding:clamp(28px,7vw,62px);border:1px solid white;box-shadow:0 15px 55px #8c606020;position:relative}
-.hero h1{font:400 clamp(3.4rem,13vw,8rem)/.9 'Playfair Display',serif;color:#80575d;margin:20px 0}
-.hero h1 em{display:block;font-weight:400;color:#b67d83}
-.hero p{font:1.45rem 'Caveat',cursive;color:#9b7077;margin:18px 0 25px}
-.heart{color:#c7838b}.pill{display:inline-block;border:1px solid #d9aeb0;padding:12px 20px;border-radius:30px;color:#95666d;text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:#fff9f5}
-section{padding:76px max(18px,5vw)}.section-head{text-align:center;margin-bottom:35px}.section-head .script{font-size:1.45rem;color:#b27d82}.section-head h2{font:400 clamp(2.2rem,7vw,4rem) 'Playfair Display',serif;margin:8px 0;color:#80575d}.section-head p{font-size:.9rem;color:#987f80}
-.note-section{background:#fff9f4;text-align:center}.note-paper{max-width:720px;margin:auto;padding:clamp(25px,6vw,54px);background:#fffdf8;border:1px solid #f0ded7;box-shadow:0 12px 35px #a97c7920;transform:rotate(-.4deg);position:relative}
-.note-paper:before{content:"little note";position:absolute;top:-17px;left:28px;background:#eac5c5;padding:6px 15px;font:1.1rem 'Caveat',cursive;color:#80575d;transform:rotate(-4deg)}
-.note-paper p{font:1.08rem/1.9 'Playfair Display',serif;color:#765d60}.note-paper .sign{font:1.8rem 'Caveat',cursive;color:#b0787e}
-.gallery-section{background:#f5e3e1}.gallery{max-width:1050px;margin:auto;columns:3 230px;column-gap:22px}.polaroid{display:inline-block;width:100%;margin:0 0 22px;background:#fffdf8;padding:10px 10px 17px;box-shadow:0 9px 25px #9e72701b;break-inside:avoid;transform:rotate(var(--r));transition:.25s}.polaroid:hover{transform:rotate(0) translateY(-5px)}.polaroid img{width:100%;display:block;max-height:390px;object-fit:cover}.polaroid p{text-align:center;margin:12px 4px 0;font:1.15rem 'Caveat',cursive;color:#906a6e}
-.friendship{background:#fff9f4;text-align:center}.friendship .big{font:italic 400 clamp(2rem,6vw,3.7rem) 'Playfair Display',serif;color:#966b71;max-width:850px;margin:20px auto}.friendship p{max-width:650px;margin:15px auto;color:#927d7d;line-height:1.8}
-.final{min-height:65svh;display:grid;place-items:center;text-align:center;padding:55px 20px;background:linear-gradient(140deg,#f0d6d5,#fff3ed)}.final h2{font:400 clamp(3rem,11vw,6.7rem)/.95 'Playfair Display',serif;color:#81585e;margin:20px 0}.final h2 em{color:#b77c84}.final .script{font-size:1.6rem;color:#a7787e}
-footer{text-align:center;padding:23px;background:#fff9f4;color:#a48686;font-size:.65rem;letter-spacing:.14em}
-@media(max-width:560px){section{padding:60px 16px}.gallery{columns:2 145px;column-gap:13px}.polaroid{padding:7px 7px 13px;margin-bottom:14px}.polaroid p{font-size:1rem}.timer{gap:7px}.timebox{min-width:58px;padding:12px 5px}}
+<style>
+:root {
+    --pink:#f4dedd;
+    --blush:#f9eeee;
+    --cream:#fffaf4;
+    --rose:#b8757d;
+    --ink:#59464a;
+    --muted:#927b7e;
+    --line:#e8c9c8;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    margin:0;
+    background:var(--blush);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;
+}
+
+button {
+    font:inherit;
+}
+
+.serif {
+    font-family:'Playfair Display',serif;
+}
+
+.script {
+    font-family:'Caveat',cursive;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to {
+        opacity:1;
+        transform:none;
+    }
+}
+
+/* HEADER */
+
+.topbar {
+    text-align:center;
+    padding:17px 12px;
+    font:.7rem 'DM Sans',sans-serif;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#a37b7f;
+    background:#fff8f3;
+}
+
+/* HERO */
+
+.hero {
+    min-height:82svh;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    padding:50px 20px;
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(#f8e9e6d9,#f8e9e6d9),
+    url('./images/photo-03.jpg') center 35%/cover;
+}
+
+.hero-box {
+    max-width:720px;
+    background:#fffaf0e8;
+    padding:clamp(28px,7vw,62px);
+    border:1px solid white;
+    box-shadow:0 15px 55px #8c606020;
+    position:relative;
+}
+
+.hero h1 {
+    font:400 clamp(3.4rem,13vw,8rem)/.9 'Playfair Display',serif;
+    color:#80575d;
+    margin:20px 0;
+}
+
+.hero h1 em {
+    display:block;
+    font-weight:400;
+    color:#b67d83;
+}
+
+.hero p {
+    font:1.45rem 'Caveat',cursive;
+    color:#9b7077;
+    margin:18px 0 25px;
+}
+
+.heart {
+    color:#c7838b;
+}
+
+.pill {
+    display:inline-block;
+    border:1px solid #d9aeb0;
+    padding:12px 20px;
+    border-radius:30px;
+    color:#95666d;
+    text-decoration:none;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    background:#fff9f5;
+}
+
+/* SECTIONS */
+
+section {
+    padding:76px max(18px,5vw);
+}
+
+.section-head {
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-head .script {
+    font-size:1.45rem;
+    color:#b27d82;
+}
+
+.section-head h2 {
+    font:400 clamp(2.2rem,7vw,4rem) 'Playfair Display',serif;
+    margin:8px 0;
+    color:#80575d;
+}
+
+.section-head p {
+    font-size:.9rem;
+    color:#987f80;
+}
+
+/* BIRTHDAY NOTE */
+
+.note-section {
+    background:#fff9f4;
+    text-align:center;
+}
+
+.note-paper {
+    max-width:720px;
+    margin:auto;
+    padding:clamp(25px,6vw,54px);
+    background:#fffdf8;
+    border:1px solid #f0ded7;
+    box-shadow:0 12px 35px #a97c7920;
+    transform:rotate(-.4deg);
+    position:relative;
+}
+
+.note-paper:before {
+    content:"little note";
+    position:absolute;
+    top:-17px;
+    left:28px;
+    background:#eac5c5;
+    padding:6px 15px;
+    font:1.1rem 'Caveat',cursive;
+    color:#80575d;
+    transform:rotate(-4deg);
+}
+
+.note-paper p {
+    font:1.08rem/1.9 'Playfair Display',serif;
+    color:#765d60;
+}
+
+.note-paper .sign {
+    font:1.8rem 'Caveat',cursive;
+    color:#b0787e;
+}
+
+/* GALLERY */
+
+.gallery-section {
+    background:#f5e3e1;
+}
+
+.gallery {
+    max-width:1050px;
+    margin:auto;
+    columns:3 230px;
+    column-gap:22px;
+}
+
+.polaroid {
+    display:inline-block;
+    width:100%;
+    margin:0 0 22px;
+    background:#fffdf8;
+    padding:10px 10px 17px;
+    box-shadow:0 9px 25px #9e72701b;
+    break-inside:avoid;
+    transform:rotate(var(--r));
+    transition:.25s;
+}
+
+.polaroid:hover {
+    transform:rotate(0) translateY(-5px);
+}
+
+.polaroid img {
+    width:100%;
+    display:block;
+    max-height:390px;
+    object-fit:cover;
+    border-radius:2px;
+}
+
+/* IMAGE FALLBACK */
+
+.image-placeholder {
+    width:100%;
+    min-height:220px;
+    display:grid;
+    place-items:center;
+    background:#f8e9e6;
+    color:#a7787e;
+    font:1.2rem 'Caveat',cursive;
+    text-align:center;
+    padding:20px;
+}
+
+.polaroid p {
+    text-align:center;
+    margin:12px 4px 0;
+    font:1.15rem 'Caveat',cursive;
+    color:#906a6e;
+}
+
+/* FRIENDSHIP */
+
+.friendship {
+    background:#fff9f4;
+    text-align:center;
+}
+
+.friendship .big {
+    font:italic 400 clamp(2rem,6vw,3.7rem) 'Playfair Display',serif;
+    color:#966b71;
+    max-width:850px;
+    margin:20px auto;
+}
+
+.friendship p {
+    max-width:650px;
+    margin:15px auto;
+    color:#927d7d;
+    line-height:1.8;
+}
+
+/* FINAL */
+
+.final {
+    min-height:65svh;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    padding:55px 20px;
+    background:linear-gradient(140deg,#f0d6d5,#fff3ed);
+}
+
+.final h2 {
+    font:400 clamp(3rem,11vw,6.7rem)/.95 'Playfair Display',serif;
+    color:#81585e;
+    margin:20px 0;
+}
+
+.final h2 em {
+    color:#b77c84;
+}
+
+.final .script {
+    font-size:1.6rem;
+    color:#a7787e;
+}
+
+footer {
+    text-align:center;
+    padding:23px;
+    background:#fff9f4;
+    color:#a48686;
+    font-size:.65rem;
+    letter-spacing:.14em;
+}
+
+/* MOBILE */
+
+@media(max-width:560px) {
+    section {
+        padding:60px 16px;
+    }
+
+    .gallery {
+        columns:2 145px;
+        column-gap:13px;
+    }
+
+    .polaroid {
+        padding:7px 7px 13px;
+        margin-bottom:14px;
+    }
+
+    .polaroid p {
+        font-size:1rem;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <div id="birthdaySite">
- <div class="topbar">made with a little extra love · for Abhishek ♡</div>
- <header class="hero">
-  <div class="hero-box">
-   <div class="kicker">today is all about you · 02 November</div>
-   <h1>Happy<br><em>Birthday</em></h1>
-   <p>to our favourite human, Abhishek ♡</p>
-   <a class="pill" href="#memories">open the memory book ↓</a>
-  </div>
- </header>
- <section class="note-section">
-  <div class="section-head"><div class="script">a note from the heart ♡</div><h2>Dear Abhishek,</h2></div>
-  <div class="note-paper">
-   <p>Some people make ordinary days feel a little more special, and you're one of them. Here's to all the laughs, random plans, late-night scenes, silly moments and memories that deserve their own little corner in a scrapbook.</p>
-   <p>May this year bring you happiness that stays, opportunities that excite you, people who value you, and a hundred new reasons to smile. Keep being unapologetically you. The story is only getting better.</p>
-   <p class="sign">Happy birthday, once again! ♡</p>
-  </div>
- </section>
- <section class="gallery-section" id="memories">
-  <div class="section-head"><div class="script">pressed flowers & saved moments</div><h2>Our little memory lane</h2><p>Ten frames. Countless stories. More memories to come.</p></div>
-  <div class="gallery" id="gallery"></div>
- </section>
- <section class="friendship">
-  <div class="section-head"><div class="script">a tiny reminder</div><h2>You're a whole vibe.</h2></div>
-  <div class="big">“Some memories become photographs. The best ones become a part of us.”</div>
-  <p>Here's to more adventures, more pictures that make no sense to anyone else, more laughter, and more chapters together. Stay golden, birthday star.</p>
-  <div class="script" style="font-size:1.5rem;color:#b0787e">with friendship, always ✿</div>
- </section>
- <section class="final">
-  <div><div class="kicker">one more time, for the birthday boy</div><h2>Happy Birthday,<br><em>Abhishek ♡</em></h2><div class="script">to be continued…</div></div>
- </section>
- <footer>THE ABHISHEK SCRAPBOOK · MADE WITH FRIENDSHIP & LOTS OF HEARTS</footer>
+
+    <!-- HEADER -->
+
+    <div class="topbar">
+        Made with luvvv for abhii ♡
+    </div>
+
+    <!-- HERO -->
+
+    <header class="hero">
+        <div class="hero-box">
+
+            <h1>
+                Happy
+                <em>Birthday</em>
+            </h1>
+
+            <p>to our favourite human, Abhishek ♡</p>
+
+            <a class="pill" href="#memories">
+                open the memory book ↓
+            </a>
+
+        </div>
+    </header>
+
+    <!-- PERSONAL NOTE -->
+
+    <section class="note-section">
+
+        <div class="section-head">
+            <div class="script">a note from the heart ♡</div>
+            <h2>Dear Munshi Ji,</h2>
+        </div>
+
+        <div class="note-paper">
+
+            <p>
+                Every group has that one person who keeps everyone together,
+                and for us, that's YOU — our very own Munshi Ji!
+                You're the one who leads our entire team, makes sure
+                nobody feels left out, keeps us united and somehow always
+                manages to make everyone laugh.
+            </p>
+
+            <p>
+                Life in this group wouldn't be the same without your
+                madness, your jokes, your leadership and all the little
+                things you do for us. You are not just our leader,
+                you're a very special part of our little family.
+            </p>
+
+            <p>
+                We may tease you, annoy you and call you Munshi Ji
+                all the time, but deep down, we genuinely love you
+                so much. Never stop being the person who brings
+                everyone together.
+            </p>
+
+            <p>
+                May your birthday bring you endless happiness,
+                success, good health, exciting opportunities and
+                everything your heart wishes for.
+                Keep smiling, keep shining and keep making
+                our group a little more crazy!
+            </p>
+
+            <p class="sign">
+                Happy Birthday, Munshi Ji! ♡
+                <br>
+                Lots of love from your team ✿
+            </p>
+
+        </div>
+    </section>
+
+    <!-- MEMORY GALLERY -->
+
+    <section class="gallery-section" id="memories">
+
+        <div class="section-head">
+            <div class="script">pressed flowers & saved moments</div>
+
+            <h2>Our little memory lane</h2>
+
+            <p>
+                Ten frames. Countless stories. More memories to come.
+            </p>
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+
+    </section>
+
+    <!-- FRIENDSHIP -->
+
+    <section class="friendship">
+
+        <div class="section-head">
+            <div class="script">a tiny reminder</div>
+            <h2>You're a whole vibe.</h2>
+        </div>
+
+        <div class="big">
+            “Some memories become photographs.
+            The best ones become a part of us.”
+        </div>
+
+        <p>
+            Here's to more adventures, more pictures that make
+            no sense to anyone else, more laughter, and more
+            chapters together. Stay golden, birthday star.
+        </p>
+
+        <div class="script" style="font-size:1.5rem;color:#b0787e">
+            with friendship, always ✿
+        </div>
+
+    </section>
+
+    <!-- FINAL BIRTHDAY WISH -->
+
+    <section class="final">
+
+        <div>
+
+            <h2>
+                Happy Birthday,
+                <br>
+                <em>Abhii ♡</em>
+            </h2>
+
+            <div class="script">
+                to be continued…
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        THE ABHISHEK SCRAPBOOK · MADE WITH FRIENDSHIP & LOTS OF HEARTS
+    </footer>
+
 </div>
+
 <script>
-const captions = ["The kind of night that becomes a favourite memory ♡", "A little adventure, a forever kind of story", "Main character, always ✧", "Good company makes everything golden", "A whole different kind of handsome ✿", "A moment worth keeping close", "The people, the chaos, the memories", "A frame full of stories ♡", "Festive lights & favourite people", "One more memory for the scrapbook"];
-const gallery=document.getElementById('gallery');
-captions.forEach((caption,i)=>{
- const card=document.createElement('article');card.className='polaroid';
- card.style.setProperty('--r',`${[-1.4,1.1,-.7,1.6,-1.1,.8,-1.5,1.2,-.6,1.5][i]}deg`);
- const img=document.createElement('img');img.src=`images/photo-${String(i+1).padStart(2,'0')}.jpg`;img.alt=`Memory ${i+1}`;
- const p=document.createElement('p');p.textContent=caption;card.append(img,p);gallery.append(card);
+
+/* PHOTO CAPTIONS */
+
+const captions = [
+    "The kind of night that becomes a favourite memory ♡",
+    "A little adventure, a forever kind of story",
+    "Main character, always ✧",
+    "Good company makes everything golden",
+    "A whole different kind of handsome ✿",
+    "A moment worth keeping close",
+    "The people, the chaos, the memories",
+    "A frame full of stories ♡",
+    "Festive lights & favourite people",
+    "One more memory for the scrapbook"
+];
+
+/* GALLERY */
+
+const gallery = document.getElementById('gallery');
+
+const rotations = [
+    -1.4, 1.1, -0.7, 1.6, -1.1,
+    0.8, -1.5, 1.2, -0.6, 1.5
+];
+
+captions.forEach((caption, i) => {
+
+    const card = document.createElement('article');
+    card.className = 'polaroid';
+
+    card.style.setProperty('--r', `${rotations[i]}deg`);
+
+    const img = document.createElement('img');
+
+    // Correct relative image path
+    img.src = `./images/photo-${String(i + 1).padStart(2, '0')}.jpg`;
+
+    // Use actual caption instead of Memory 1, Memory 2 etc.
+    img.alt = caption;
+
+    // Load images when needed
+    img.loading = 'lazy';
+
+    // Fix broken image display
+    img.onerror = function() {
+
+        const placeholder = document.createElement('div');
+
+        placeholder.className = 'image-placeholder';
+
+        placeholder.textContent = 'Photo not found ♡';
+
+        this.replaceWith(placeholder);
+
+    };
+
+    const p = document.createElement('p');
+    p.textContent = caption;
+
+    card.append(img, p);
+
+    gallery.append(card);
+
 });
+
 </script>
+
 </body>
-</html>
+ </html>
+             
