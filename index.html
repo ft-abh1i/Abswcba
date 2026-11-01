@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f8e9e8">
+
 <title>For Abhii ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +19,6 @@
     --cream:#fffaf4;
     --rose:#b8757d;
     --ink:#59464a;
-    --muted:#927b7e;
-    --line:#e8c9c8;
 }
 
 * {
@@ -35,28 +34,51 @@ body {
     background:var(--blush);
     color:var(--ink);
     font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
 }
 
 button {
     font:inherit;
-}
-
-.serif {
-    font-family:'Playfair Display',serif;
+    cursor:pointer;
 }
 
 .script {
     font-family:'Caveat',cursive;
 }
 
-@keyframes fadeIn {
-    from {
+/* FLOATING HEARTS */
+
+.hearts-container {
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:20;
+}
+
+.floating-heart {
+    position:absolute;
+    bottom:-50px;
+    color:#c7838b;
+    opacity:0;
+    animation:floatHeart linear forwards;
+    text-shadow:0 2px 8px #c7838b30;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform:translateY(0) rotate(0deg);
         opacity:0;
-        transform:translateY(15px);
     }
-    to {
-        opacity:1;
-        transform:none;
+    10% {
+        opacity:.45;
+    }
+    80% {
+        opacity:.3;
+    }
+    100% {
+        transform:translateY(-110vh) rotate(35deg);
+        opacity:0;
     }
 }
 
@@ -65,7 +87,7 @@ button {
 .topbar {
     text-align:center;
     padding:17px 12px;
-    font:.7rem 'DM Sans',sans-serif;
+    font-size:.7rem;
     letter-spacing:.18em;
     text-transform:uppercase;
     color:#a37b7f;
@@ -80,8 +102,6 @@ button {
     place-items:center;
     text-align:center;
     padding:50px 20px;
-    position:relative;
-    overflow:hidden;
     background:
     linear-gradient(#f8e9e6d9,#f8e9e6d9),
     url('./images/photo-03.jpg') center 35%/cover;
@@ -93,7 +113,6 @@ button {
     padding:clamp(28px,7vw,62px);
     border:1px solid white;
     box-shadow:0 15px 55px #8c606020;
-    position:relative;
 }
 
 .hero h1 {
@@ -104,7 +123,6 @@ button {
 
 .hero h1 em {
     display:block;
-    font-weight:400;
     color:#b67d83;
 }
 
@@ -112,10 +130,6 @@ button {
     font:1.45rem 'Caveat',cursive;
     color:#9b7077;
     margin:18px 0 25px;
-}
-
-.heart {
-    color:#c7838b;
 }
 
 .pill {
@@ -158,7 +172,7 @@ section {
     color:#987f80;
 }
 
-/* BIRTHDAY NOTE */
+/* NOTE */
 
 .note-section {
     background:#fff9f4;
@@ -221,6 +235,7 @@ section {
     break-inside:avoid;
     transform:rotate(var(--r));
     transition:.25s;
+    cursor:pointer;
 }
 
 .polaroid:hover {
@@ -232,10 +247,7 @@ section {
     display:block;
     max-height:390px;
     object-fit:cover;
-    border-radius:2px;
 }
-
-/* IMAGE FALLBACK */
 
 .image-placeholder {
     width:100%;
@@ -246,7 +258,6 @@ section {
     color:#a7787e;
     font:1.2rem 'Caveat',cursive;
     text-align:center;
-    padding:20px;
 }
 
 .polaroid p {
@@ -254,6 +265,86 @@ section {
     margin:12px 4px 0;
     font:1.15rem 'Caveat',cursive;
     color:#906a6e;
+}
+
+/* PHOTO LIGHTBOX */
+
+.lightbox {
+    position:fixed;
+    inset:0;
+    background:rgba(48,29,34,.94);
+    z-index:100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:55px 15px 35px;
+}
+
+.lightbox.active {
+    display:flex;
+}
+
+.lightbox-content {
+    width:100%;
+    max-width:850px;
+    text-align:center;
+    animation:zoomIn .25s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform:scale(.9);
+        opacity:0;
+    }
+    to {
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.lightbox img {
+    max-width:100%;
+    max-height:72svh;
+    object-fit:contain;
+    border:9px solid #fffdf8;
+    box-shadow:0 10px 40px #0005;
+}
+
+.lightbox-caption {
+    color:#fff1ed;
+    font:1.5rem 'Caveat',cursive;
+    margin-top:15px;
+}
+
+.lightbox-close {
+    position:absolute;
+    top:15px;
+    right:20px;
+    border:none;
+    background:none;
+    color:white;
+    font-size:35px;
+}
+
+.lightbox-nav {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:#fff8f330;
+    color:white;
+    width:43px;
+    height:55px;
+    border-radius:25px;
+    font-size:25px;
+}
+
+.lightbox-prev {
+    left:12px;
+}
+
+.lightbox-next {
+    right:12px;
 }
 
 /* FRIENDSHIP */
@@ -312,9 +403,93 @@ footer {
     letter-spacing:.14em;
 }
 
-/* MOBILE */
+/* MUSIC PLAYER */
+
+.music-player {
+    position:fixed;
+    bottom:20px;
+    right:18px;
+    z-index:50;
+    width:245px;
+    padding:13px;
+    border-radius:16px;
+    background:#fffaf4ed;
+    border:1px solid #e8c9c8;
+    box-shadow:0 8px 30px #8c606025;
+    backdrop-filter:blur(10px);
+}
+
+.music-top {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.music-icon {
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    background:#f4dedd;
+    border-radius:12px;
+    font-size:20px;
+}
+
+.music-info {
+    flex:1;
+    min-width:0;
+}
+
+.music-info strong {
+    display:block;
+    font:1rem 'Playfair Display',serif;
+    color:#80575d;
+}
+
+.music-info small {
+    color:#a37b7f;
+    font-size:.7rem;
+}
+
+.music-controls {
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.music-controls button {
+    border:none;
+    background:none;
+    color:#95666d;
+    font-size:21px;
+}
+
+.music-progress {
+    width:100%;
+    height:4px;
+    margin-top:12px;
+    border-radius:10px;
+    background:#ead4d2;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.music-progress-fill {
+    width:0%;
+    height:100%;
+    background:#b8757d;
+}
+
+.music-time {
+    display:flex;
+    justify-content:space-between;
+    font-size:.65rem;
+    color:#a37b7f;
+    margin-top:5px;
+}
 
 @media(max-width:560px) {
+
     section {
         padding:60px 16px;
     }
@@ -332,41 +507,61 @@ footer {
     .polaroid p {
         font-size:1rem;
     }
+
+    .music-player {
+        bottom:12px;
+        right:10px;
+        width:215px;
+    }
+
+    .lightbox-nav {
+        top:auto;
+        bottom:18px;
+        transform:none;
+    }
+
+    .lightbox-prev {
+        left:25%;
+    }
+
+    .lightbox-next {
+        right:25%;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        transition-duration:.01ms !important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div id="birthdaySite">
+<!-- FLOATING HEARTS -->
+<div class="hearts-container" id="heartsContainer"></div>
 
-    <!-- HEADER -->
+<div id="birthdaySite">
 
     <div class="topbar">
         Made with luvvv for abhii ♡
     </div>
 
     <!-- HERO -->
-
     <header class="hero">
         <div class="hero-box">
-
-            <h1>
-                Happy
-                <em>Birthday</em>
-            </h1>
-
+            <h1>Happy <em>Birthday</em></h1>
             <p>to our favourite human, Abhishek ♡</p>
-
-            <a class="pill" href="#memories">
-                open the memory book ↓
-            </a>
-
+            <a class="pill" href="#memories">open the memory book ↓</a>
         </div>
     </header>
 
-    <!-- PERSONAL NOTE -->
-
+    <!-- NOTE -->
     <section class="note-section">
 
         <div class="section-head">
@@ -415,18 +610,13 @@ footer {
         </div>
     </section>
 
-    <!-- MEMORY GALLERY -->
-
+    <!-- GALLERY -->
     <section class="gallery-section" id="memories">
 
         <div class="section-head">
             <div class="script">pressed flowers & saved moments</div>
-
             <h2>Our little memory lane</h2>
-
-            <p>
-                Ten frames. Countless stories. More memories to come.
-            </p>
+            <p>Ten frames. Countless stories. More memories to come.</p>
         </div>
 
         <div class="gallery" id="gallery"></div>
@@ -434,7 +624,6 @@ footer {
     </section>
 
     <!-- FRIENDSHIP -->
-
     <section class="friendship">
 
         <div class="section-head">
@@ -459,22 +648,17 @@ footer {
 
     </section>
 
-    <!-- FINAL BIRTHDAY WISH -->
-
+    <!-- FINAL -->
     <section class="final">
 
         <div>
-
             <h2>
                 Happy Birthday,
                 <br>
                 <em>Abhii ♡</em>
             </h2>
 
-            <div class="script">
-                to be continued…
-            </div>
-
+            <div class="script">to be continued…</div>
         </div>
 
     </section>
@@ -485,9 +669,64 @@ footer {
 
 </div>
 
+<!-- MUSIC PLAYER -->
+<div class="music-player">
+
+    <div class="music-top">
+
+        <div class="music-icon">♫</div>
+
+        <div class="music-info">
+            <strong>Birthday Tunes ♡</strong>
+            <small id="musicStatus">A little music for you</small>
+        </div>
+
+        <div class="music-controls">
+            <button id="playBtn" aria-label="Play music">▶</button>
+        </div>
+
+    </div>
+
+    <div class="music-progress" id="musicProgress">
+        <div class="music-progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="music-time">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+    </div>
+
+</div>
+
+<audio id="birthdayAudio" preload="metadata">
+    <source src="./music/birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PHOTO LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close">
+        ×
+    </button>
+
+    <button class="lightbox-nav lightbox-prev" id="prevPhoto" aria-label="Previous photo">
+        ‹
+    </button>
+
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <button class="lightbox-nav lightbox-next" id="nextPhoto" aria-label="Next photo">
+        ›
+    </button>
+
+</div>
+
 <script>
 
-/* PHOTO CAPTIONS */
+/* PHOTO DATA */
 
 const captions = [
     "The kind of night that becomes a favourite memory ♡",
@@ -502,16 +741,21 @@ const captions = [
     "One more memory for the scrapbook"
 ];
 
-/* GALLERY */
-
-const gallery = document.getElementById('gallery');
-
 const rotations = [
     -1.4, 1.1, -0.7, 1.6, -1.1,
     0.8, -1.5, 1.2, -0.6, 1.5
 ];
 
-captions.forEach((caption, i) => {
+const photos = captions.map((caption, i) => ({
+    src: `./images/photo-${String(i + 1).padStart(2, '0')}.jpg`,
+    caption: caption
+}));
+
+/* CREATE GALLERY */
+
+const gallery = document.getElementById('gallery');
+
+photos.forEach((photo, i) => {
 
     const card = document.createElement('article');
     card.className = 'polaroid';
@@ -520,39 +764,260 @@ captions.forEach((caption, i) => {
 
     const img = document.createElement('img');
 
-    // Correct relative image path
-    img.src = `./images/photo-${String(i + 1).padStart(2, '0')}.jpg`;
-
-    // Use actual caption instead of Memory 1, Memory 2 etc.
-    img.alt = caption;
-
-    // Load images when needed
+    img.src = photo.src;
+    img.alt = photo.caption;
     img.loading = 'lazy';
 
-    // Fix broken image display
     img.onerror = function() {
-
         const placeholder = document.createElement('div');
-
         placeholder.className = 'image-placeholder';
-
         placeholder.textContent = 'Photo not found ♡';
-
         this.replaceWith(placeholder);
-
     };
 
-    const p = document.createElement('p');
-    p.textContent = caption;
+    const caption = document.createElement('p');
+    caption.textContent = photo.caption;
 
-    card.append(img, p);
+    card.append(img, caption);
+
+    // Open image on card click
+    card.addEventListener('click', () => {
+        openLightbox(i);
+    });
 
     gallery.append(card);
+
+});
+
+/* PHOTO LIGHTBOX */
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+
+let currentPhoto = 0;
+
+function openLightbox(index) {
+
+    currentPhoto = index;
+
+    updateLightbox();
+
+    lightbox.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+
+}
+
+function updateLightbox() {
+
+    const photo = photos[currentPhoto];
+
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.caption;
+
+    lightboxCaption.textContent = photo.caption;
+
+    lightboxImage.style.display = 'block';
+
+    lightboxImage.onerror = function() {
+        this.style.display = 'none';
+        lightboxCaption.textContent = 'Photo not found ♡';
+    };
+
+}
+
+function closeLightbox() {
+
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+}
+
+function nextPhoto() {
+
+    currentPhoto = (currentPhoto + 1) % photos.length;
+
+    updateLightbox();
+
+}
+
+function previousPhoto() {
+
+    currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
+
+    updateLightbox();
+
+}
+
+document.getElementById('closeLightbox')
+.addEventListener('click', closeLightbox);
+
+document.getElementById('nextPhoto')
+.addEventListener('click', nextPhoto);
+
+document.getElementById('prevPhoto')
+.addEventListener('click', previousPhoto);
+
+lightbox.addEventListener('click', (e) => {
+
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+document.addEventListener('keydown', (e) => {
+
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+
+    if (e.key === 'ArrowRight') nextPhoto();
+
+    if (e.key === 'ArrowLeft') previousPhoto();
+
+});
+
+/* FLOATING HEART ANIMATION */
+
+const heartsContainer = document.getElementById('heartsContainer');
+
+const heartSymbols = ['♡', '♥', 'ღ', '❤'];
+
+function createHeart() {
+
+    const heart = document.createElement('span');
+
+    heart.className = 'floating-heart';
+
+    heart.textContent =
+        heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+    heart.style.left = Math.random() * 100 + '%';
+
+    heart.style.fontSize = (12 + Math.random() * 18) + 'px';
+
+    const duration = 8 + Math.random() * 8;
+
+    heart.style.animationDuration = duration + 's';
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, duration * 1000);
+
+}
+
+// Create hearts gradually
+setInterval(createHeart, 1100);
+
+/* MUSIC PLAYER */
+
+const audio = document.getElementById('birthdayAudio');
+
+const playBtn = document.getElementById('playBtn');
+
+const musicStatus = document.getElementById('musicStatus');
+
+const progressFill = document.getElementById('progressFill');
+
+const musicProgress = document.getElementById('musicProgress');
+
+const currentTimeText = document.getElementById('currentTime');
+
+const durationText = document.getElementById('duration');
+
+function formatTime(seconds) {
+
+    if (!Number.isFinite(seconds)) return '0:00';
+
+    const minutes = Math.floor(seconds / 60);
+
+    const remaining = Math.floor(seconds % 60);
+
+    return `${minutes}:${String(remaining).padStart(2, '0')}`;
+
+}
+
+playBtn.addEventListener('click', async () => {
+
+    if (audio.paused) {
+
+        try {
+
+            await audio.play();
+
+            playBtn.textContent = '❚❚';
+
+            musicStatus.textContent = 'Now playing ♡';
+
+        } catch (error) {
+
+            musicStatus.textContent = 'Add your MP3 song first ♡';
+
+        }
+
+    } else {
+
+        audio.pause();
+
+        playBtn.textContent = '▶';
+
+        musicStatus.textContent = 'Paused ♡';
+
+    }
+
+});
+
+audio.addEventListener('timeupdate', () => {
+
+    if (!audio.duration) return;
+
+    const progress = (audio.currentTime / audio.duration) * 100;
+
+    progressFill.style.width = progress + '%';
+
+    currentTimeText.textContent = formatTime(audio.currentTime);
+
+});
+
+audio.addEventListener('loadedmetadata', () => {
+
+    durationText.textContent = formatTime(audio.duration);
+
+});
+
+audio.addEventListener('ended', () => {
+
+    playBtn.textContent = '▶';
+
+    musicStatus.textContent = 'Replay your favourite song ♡';
+
+});
+
+audio.addEventListener('error', () => {
+
+    musicStatus.textContent = 'Add your MP3 song first ♡';
+
+});
+
+musicProgress.addEventListener('click', (e) => {
+
+    if (!audio.duration) return;
+
+    const rect = musicProgress.getBoundingClientRect();
+
+    const position = (e.clientX - rect.left) / rect.width;
+
+    audio.currentTime = position * audio.duration;
 
 });
 
 </script>
 
 </body>
- </html>
-             
+    </html>
+    
